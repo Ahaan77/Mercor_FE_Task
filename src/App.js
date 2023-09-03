@@ -3,8 +3,6 @@ import TopNav from './components/TopNav';
 import { useWindowSize } from "@uidotdev/usehooks";
 import { useState } from 'react';
 import Drawer from 'react-modern-drawer'
-
-//import styles 👇
 import 'react-modern-drawer/dist/index.css'
 
 function App() {
@@ -24,8 +22,8 @@ function App() {
         {size.width >= 640 ? <TopNav /> : null}
         {size.width >= 640 ? <img className='mr-10 h-10' src="eye.svg" /> : <img onClick={toggleDrawer} className='mr-8 h-6 z-20' src="hamburger.svg" />}
       </div>
-      {size.width >= 640 ? <img className='absolute lg:left-40 md:left-40 sm:left-40 xs:left-2 lg:h-20 h-16 lg:top-14 md:top-14 sm:top-14 xs:top-40  ' src="cube.svg" /> : null}
-      {size.width >= 640 ? <img className='absolute lg:right-24 md:right-24 sm:right-24 xs:right-0  lg:h-64 md:h-44 sm:h-44 xs:h-20 lg:top-20 md:top-20 sm:top-20 xs:top-32 ' src="stairs.svg" /> : null}
+      {size.width >= 640 ? <img className='absolute lg:left-40 md:left-40 sm:left-40 xs:left-2 lg:h-20 h-16 lg:top-24 md:top-24 sm:top-24 xs:top-40' src="cube.svg" /> : null}
+      {size.width >= 640 ? <img className='absolute lg:right-24 md:right-24 sm:right-24 xs:right-0  lg:h-64 md:h-44 sm:h-44 xs:h-20 lg:top-20 md:top-20 sm:top-20 xs:top-32' src="stairs.svg" /> : null}
       <div className='Main w-full z-90 absolute top-[26vh] flex justify-center items-center text-white '>
         <div className='Base'>
           <div>
@@ -52,7 +50,6 @@ function App() {
               <img src="play.svg" />
               <p className='mt-1'>GOOGLE PLAY</p>
             </button>
-
           </div>
           <div className='mr-12 flex gap-10 items-center Base'>
             <div className='text-[#B6B6B6] lg:text-[12px] md:text-[9px] sm:text-[5px] w-[32vw] disclaimer'>
