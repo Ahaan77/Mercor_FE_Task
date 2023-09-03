@@ -22,17 +22,17 @@ function App() {
         {size.width >= 640 ? <TopNav /> : null}
         {size.width >= 640 ? <img className='mr-10 h-10' src="eye.svg" /> : <img onClick={toggleDrawer} className='mr-8 h-6 z-20' src="hamburger.svg" />}
       </div>
-      {size.width >= 640 ? <img className='absolute lg:left-40 md:left-40 sm:left-40 xs:left-2 lg:h-20 h-16 lg:top-24 md:top-24 sm:top-24 xs:top-40' src="cube.svg" /> : null}
-      {size.width >= 640 ? <img className='absolute lg:right-24 md:right-24 sm:right-24 xs:right-0  lg:h-64 md:h-44 sm:h-44 xs:h-20 lg:top-20 md:top-20 sm:top-20 xs:top-32' src="stairs.svg" /> : null}
+      {size.width >= 640 ? <img className='absolute lg:left-40 md:left-40 sm:left-40 xs:left-2 lg:h-20 h-16 lg:top-24 md:top-24 sm:top-24 xs:top-40  ' src="cube.svg" /> : null}
+      {size.width >= 640 ? <img className='absolute lg:right-24 md:right-24 sm:right-24 xs:right-0  lg:h-64 md:h-44 sm:h-44 xs:h-20 lg:top-20 md:top-20 sm:top-20 xs:top-32 ' src="stairs.svg" /> : null}
       <div className='Main w-full z-90 absolute top-[26vh] flex justify-center items-center text-white '>
         <div className='Base'>
           <div>
             CASH
           </div>
           <div className='flex justify-center'>
-            <img className='absolute top-[0vh] z-10 lg:h-[56vh] md:h-[40vh] sm:h-[40vh] xs:h-[25vh] ' src="phone.png" />
+            <img className='absolute top-[0vh] z-10 3xl:h-[40vh] lg:h-[56vh] md:h-[40vh] sm:h-[40vh] xs:h-[25vh] ' src="phone.png" />
           </div>
-          <div className='lg:-mt-[16vh] md:-mt-[10vh] sm:-mt-[8vh] xs:-mt-[7vh] flex justify-center'>
+          <div className='3xl:-mt-[8vh] 2xl:-mt-[12vh] lg:-mt-[16vh] md:-mt-[10vh] sm:-mt-[8vh] xs:-mt-[7vh] flex justify-center'>
             <p className='z-10'>APP</p>
           </div>
         </div>
@@ -42,17 +42,18 @@ function App() {
       {size.width > 640 ? <div className='absolute bottom-6 w-full'>
         <div className='w-full flex justify-between items-center'>
           <div className='ml-10 flex gap-4 items-center Base'>
-            <button className='px-4 z-30 py-3 border border-white rounded-md bg-black text-white flex items-center gap-4 lg:text-[12px] md:text-[9px] sm:text-[7px] hover:bg-gray-800 hover:transition duration-200'>
+            <button className='px-4 z-30 py-3 border border-white rounded-md bg-black text-white flex items-center gap-4 2xl:text-[20px] xl:text-[16px] lg:text-[12px] md:text-[9px] sm:text-[7px] hover:bg-gray-800 hover:transition duration-200'>
               <img src="apple.svg" />
               <p className='mt-1'>APP STORE</p>
             </button>
-            <button className='px-4 z-30 py-3 border border-white rounded-md bg-black text-white flex items-center gap-4 lg:text-[12px] md:text-[9px] sm:text-[7px] hover:bg-gray-800 hover:transition duration-200  '>
+            <button className='px-4 z-30 py-3 border border-white rounded-md bg-black text-white flex items-center gap-4 2xl:text-[20px] xl:text-[16px] lg:text-[12px] md:text-[9px] sm:text-[7px] hover:bg-gray-800 hover:transition duration-200  '>
               <img src="play.svg" />
               <p className='mt-1'>GOOGLE PLAY</p>
             </button>
+
           </div>
           <div className='mr-12 flex gap-10 items-center Base'>
-            <div className='text-[#B6B6B6] lg:text-[12px] md:text-[9px] sm:text-[5px] w-[32vw] disclaimer'>
+            <div className='text-[#B6B6B6] 2xl:text-[12px] xl:text-[12px] lg:text-[12px] md:text-[9px] sm:text-[5px] w-[32vw] disclaimer'>
               <p className=''>Brokerage services by Cash App Investing LLC, member FINRA / SIPC. See our BrokerCheck. Investing involves risk; you may lose money. Bitcoin trading offered by Cash App. Cash App Investing does not trade bitcoin and Cash App is not a member of FINRA or SIPC. Cash App facilitates banking services through Sutton Bank and Lincoln Savings Bank, Members FDIC.</p>
             </div>
             <div className='flex items-center gap-7 '>
