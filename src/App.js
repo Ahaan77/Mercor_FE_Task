@@ -1,18 +1,28 @@
 import './App.css';
 import TopNav from './components/TopNav';
 import { useWindowSize } from "@uidotdev/usehooks";
+import { useState } from 'react';
+import Drawer from 'react-modern-drawer'
+
+//import styles 👇
+import 'react-modern-drawer/dist/index.css'
 
 function App() {
+
+  const [isOpen, setIsOpen] = useState(false)
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState)
+  }
 
   const size = useWindowSize();
 
   return (
     <div className='w-full'>
-      {size.width >= 420 ? <img className='absolute w-full h-[100%]  z-10 ' src="web.svg" alt="web" /> : null}
+      {size.width >= 420 ? <img className='absolute w-full h-[98%] z-10 ' src="web.svg" alt="web" /> : null}
       <div className='h-20 mt-2 w-full flex justify-between items-center'>
         <img className='ml-10 h-10' src="cash.svg" />
         {size.width >= 640 ? <TopNav /> : null}
-        {size.width >= 640 ? <img className='mr-10 h-10' src="eye.svg" /> : <img className='mr-8 h-6' src="hamburger.svg" />}
+        {size.width >= 640 ? <img className='mr-10 h-10' src="eye.svg" /> : <img onClick={toggleDrawer} className='mr-8 h-6' src="hamburger.svg" />}
       </div>
       {size.width >= 640 ? <img className='absolute lg:left-40 md:left-40 sm:left-40 xs:left-2 lg:h-20 h-16 lg:top-14 md:top-14 sm:top-14 xs:top-40  ' src="cube.svg" /> : null}
       {size.width >= 640 ? <img className='absolute lg:right-24 md:right-24 sm:right-24 xs:right-0  lg:h-64 md:h-44 sm:h-44 xs:h-20 lg:top-20 md:top-20 sm:top-20 xs:top-32 ' src="stairs.svg" /> : null}
@@ -57,7 +67,7 @@ function App() {
         </div>
       </div>
         :
-        <div className='absolute bottom-72 w-full'>
+        <div className='absolute bottom-52 w-full'>
           <div className='flex w-full justify-center gap-4 items-center Base '>
             <button className='px-4 z-30 py-3 border border-white rounded-md bg-black text-white flex items-center gap-4 text-[10px] hover:bg-gray-800 hover:transition duration-200'>
               <img src="apple.svg" />
@@ -76,7 +86,24 @@ function App() {
             </div>
           </div>
         </div>}
-
+      <Drawer
+        open={isOpen}
+        onClose={toggleDrawer}
+        direction='right'
+        style={{ backgroundColor: '#161616' }}
+      >
+        <div className='Base text-white text-xs'>
+          <button className='w-full flex justify-center px-2 py-2 mt-4'>SIGN IN</button>
+          <button className='w-full flex justify-center px-2 py-2 mt-4'>LEGAL</button>
+          <button className='w-full flex justify-center px-2 py-2 mt-4'>LICENSES</button>
+          <button className='w-full flex justify-center px-2 py-2 mt-4'>SECURITY</button>
+          <button className='w-full flex justify-center px-2 py-2 mt-4'>CAREERS</button>
+          <button className='w-full flex justify-center px-2 py-2 mt-4'>PRESS</button>
+          <button className='w-full flex justify-center px-2 py-2 mt-4'>SUPPORT</button>
+          <button className='w-full flex justify-center px-2 py-2 mt-4'>STATUS</button>
+          <button className='w-full flex justify-center px-2 py-2 mt-4'>CODEBLOG</button>
+        </div>
+      </Drawer>
     </div>
   );
 }
